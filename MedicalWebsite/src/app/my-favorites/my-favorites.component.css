@@ -1,0 +1,32 @@
+html{
+  background: url(../../assets/images/medicall.jpg);
+}
+
+.body{
+  width:100vw;
+  height:10vh;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.down{
+  width:100vw;
+  height:50vh;
+}
+
+.paginator {
+ width: 50%;
+}
+
+.Table-Normal {
+  margin: 10;
+  padding: 4;
+  border: 2;
+  border: 2px solid rgb(12, 4, 49);
+  width: 60%;
+  background-color:rgb(185, 245, 245);
+}
+ 
+table {
+  width: 100%;
+}

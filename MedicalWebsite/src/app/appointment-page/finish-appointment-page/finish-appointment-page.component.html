@@ -1,0 +1,25 @@
+<div class="content-body">
+    <img
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimecscursos.com.br%2Fwp-content%2Fuploads%2F2020%2F04%2Fblue-medical-background.jpg&f=1&nofb=1">
+
+    <mat-card class="appointment-card">
+        <mat-card-header>
+            <mat-card-title>Your appointment</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <br>
+            <p>Thank you for scheduling an appointment at our health center! Here is a short resume of the data you sent us:</p>
+            <br>
+            <p>The appointment is for <b>{{firstName + " " + lastName}}</b>, at <b>{{location}}</b>, for the department <b>{{department}}</b>,
+                on {{date}}.</p>
+            <br><br>
+            <p>You will soon receive an email on <b>{{email}}</b> with further details about your appointment.</p>
+            <br>
+            <p>In case you wish to cancel it, send us an email on <b>applesnpeople@healthcenter.com</b> at least 2 days prior.</p>
+
+        </mat-card-content>
+
+    </mat-card>
+
+</div>

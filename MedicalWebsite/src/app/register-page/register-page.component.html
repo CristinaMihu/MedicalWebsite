@@ -1,0 +1,110 @@
+<div class="content-body">
+    <img
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F113%2F975%2Foriginal%2Fmedical-free-vector-background-with-heart-monitor.jpg&f=1&nofb=1">
+
+    <mat-card class="register-card">
+        <mat-card-header>
+            <mat-card-title>Register</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+            <form [formGroup]="myForm" class="example-form">
+
+                <mat-form-field class="example-full-width">
+                    <input id="emailRegister" type="text" formControlName="emailRegister" matInput placeholder="Email"
+                        required>
+                    <mat-error *ngIf="emailRegister">{{getErrorMessageRequiredEmailRegister()}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input id="passwordRegister" [type]="hide1 ? 'password' : 'text'" formControlName="passwordRegister" matInput
+                        placeholder="Password" required>
+                    <mat-icon [ngStyle]="{'color':'black'}" matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+
+                    <mat-error *ngIf="passwordRegister">
+                        <div *ngIf="getErrorMessageRequiredPasswordRegister()!=true">
+                            {{getErrorMessageRequiredPasswordRegister()}}
+                        </div>
+                    </mat-error>
+
+                    <mat-error *ngIf="passwordRegister">
+                        <div *ngIf="getErrorMessageStrengthPasswordRegister()!=true">
+                            {{getErrorMessageStrengthPasswordRegister()}}
+                        </div>
+                    </mat-error>
+
+                    <mat-error *ngIf="passwordRegister">
+                        <div *ngIf="getErrorMessageLengthPasswordRegister()!=true">
+                            {{getErrorMessageLengthPasswordRegister()}}
+                        </div>
+                    </mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input id="passwordRegisterConfirm" [type]="hide2 ? 'password' : 'text'" formControlName="passwordRegisterConfirm" matInput placeholder="Password Confirmation"
+                        required>
+                    <mat-icon [ngStyle]="{'color':'black'}" matSuffix (click)="hide2 = !hide2">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+                
+                    <mat-error *ngIf="passwordRegisterConfirm">
+                        <div *ngIf="getErrorMessageRequiredPasswordRegisterConfirm()!=true">
+                            {{getErrorMessageRequiredPasswordRegisterConfirm()}}
+                        </div>
+                    </mat-error>
+                
+                    <mat-error *ngIf="passwordRegisterConfirm">
+                        <div *ngIf="getErrorPasswordsEqual()!=true">
+                            Passwords do not match
+                        </div>
+                    </mat-error>
+                
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input id="firstName" type="text" formControlName="firstName" matInput placeholder="First Name"
+                        required>
+
+                    <mat-error *ngIf="firstName">
+                        <div *ngIf="getErrorMessageRequiredFirstName()!=true">
+                            {{getErrorMessageRequiredFirstName()}}
+                        </div>
+                    </mat-error>
+
+                    <mat-error *ngIf="firstName">
+                        <div *ngIf="getErrorMessageLengthFirstName()!=true">
+                            {{getErrorMessageLengthFirstName()}}
+                        </div>
+                    </mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input id="lastName" type="text" formControlName="lastName" matInput placeholder="Last Name" required>
+
+                    <mat-error *ngIf="lastName">
+                        <div *ngIf="getErrorMessageRequiredLastName()!=true">
+                            {{getErrorMessageRequiredLastName()}}
+                        </div>
+                    </mat-error>
+
+                    <mat-error *ngIf="lastName">
+                        <div *ngIf="getErrorMessageLengthLastName()!=true">
+                            {{getErrorMessageLengthLastName()}}
+                        </div>
+                    </mat-error>
+
+                </mat-form-field>
+
+                <mat-card-actions>
+                    <button (click)="onRegister(emailRegister?.value, passwordRegister?.value, firstName?.value, lastName?.value)" [disabled]="myForm.invalid" class="register-button" mat-raised-button color="accent">Register</button>
+                </mat-card-actions>
+                
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+
+</div>

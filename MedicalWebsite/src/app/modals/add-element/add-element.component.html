@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Add doctor</h1>
+<div mat-dialog-content>
+ 
+    <form [formGroup]="doctorForm">
+        <mat-form-field>
+            <input matInput placeholder="Id" formControlName="id">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="First Name" formControlName="First_Name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Last Name" formControlName="Last_Name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Department" formControlName="department">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Location Department Doctor" formControlName="LocationDepartmentDoctor">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="Email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Mobile" formControlName="Mobile">
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="doctorForm" [disabled]="doctorForm.invalid" cdkFocusInitial>Ok</button>
+</div>

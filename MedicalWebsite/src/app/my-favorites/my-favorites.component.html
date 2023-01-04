@@ -1,0 +1,91 @@
+<html>
+
+<br>
+<br>
+<br>
+
+<mat-form-field class="example-form-field">
+  <mat-label>Find a doctor</mat-label>
+  <input matInput type="text" [(ngModel)]="firstNameSearchValue">
+  <button mat-button *ngIf="firstNameSearchValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearFirstNameSearch()">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<button mat-raised-button (click)="searchByFirstName()">Search</button>
+
+<br>
+<br>
+
+<mat-table  [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+  
+    <!-- First_Name Column -->
+    <ng-container matColumnDef="First_Name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> First Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.First_Name}} </mat-cell>
+    </ng-container>
+
+     <!-- Last_Name Column -->
+     <ng-container matColumnDef="Last_Name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Last_Name}} </mat-cell>
+    </ng-container>
+  
+    <!-- Department Column -->
+    <ng-container matColumnDef="department">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Department </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.department}} </mat-cell>
+    </ng-container>
+  
+    <!-- Location Department Column -->
+    <ng-container matColumnDef="LocationDepartmentDoctor">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Location Department Doctor </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.LocationDepartmentDoctor}} </mat-cell>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="Email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Email}} </mat-cell>
+    </ng-container>
+
+    <!-- Mobile Column -->
+    <ng-container matColumnDef="Mobile">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Mobile </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Mobile}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <button mat-raised-button color="warn" (click)='onDelete(element)'>Delete</button>
+            <button mat-raised-button color="warn" (click)='onEdit(element)'>Edit</button>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)='onRowClick(row)'></mat-row>
+  </mat-table>
+  
+  <br>
+
+  <label>Add a favorite doctor</label>
+
+  <br>
+
+  <button mat-fab color="primary" (click)="openAddDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <div class="down"></div>
+
+</html>

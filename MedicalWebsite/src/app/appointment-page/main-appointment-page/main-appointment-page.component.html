@@ -1,0 +1,71 @@
+<div class="content-body">
+    <img
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimecscursos.com.br%2Fwp-content%2Fuploads%2F2020%2F04%2Fblue-medical-background.jpg&f=1&nofb=1">
+
+    <mat-card class="appointment-card">
+        <mat-card-header>
+            <mat-card-title>Schedule an appointment with our doctors!</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+            <form [formGroup]="myForm" class="example-form">
+                <mat-form-field class="example-full-width">
+                    <input id="firstName" type="text" formControlName="firstName"  matInput placeholder="First name" required>
+                    <mat-error *ngIf="firstName">{{getErrorMessageFirstName()}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input id="lastName" type="text" formControlName="lastName" matInput placeholder="Last name" required>
+                    <mat-error *ngIf="lastName">{{getErrorMessageLastName()}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input id="email" type="text" matInput placeholder="Email address" formControlName="email" required>
+                    <mat-error *ngIf="email">{{getErrorMessageEmail()}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Phone number">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Select location</mat-label>
+                    <mat-select [(value)]="selectedLocation" formControlName="locationControl" required>
+                        <mat-option *ngFor="let location of locations" [value]="location.value">
+                            {{location.value}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="locationControl?.hasError('required')">Please choose a location</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Select department</mat-label>
+                    <mat-select formControlName="departmentControl" required>
+                        <mat-option *ngFor="let department of departments" [value]="department.value">
+                            {{department.value}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="departmentControl?.hasError('required')">Please choose a department</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="matDatepicker" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="matDatepicker?.hasError('required')">Please choose a date</mat-error>
+                </mat-form-field>
+                
+
+                <mat-card-actions>
+                    <button mat-raised-button color="accent" class="finish-button" (click)="onFinish()" [disabled]="myForm.invalid" >Finish</button>
+                </mat-card-actions>
+
+            </form>
+
+        </mat-card-content>
+
+    </mat-card>
+
+</div>

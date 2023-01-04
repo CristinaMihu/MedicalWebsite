@@ -1,0 +1,20 @@
+.appointment-card{
+  position:absolute;
+  width: 500px;
+  height: 400px;
+  bottom: 10%;
+  left: 33%;
+
+  background: white;
+}
+
+
+::ng-deep .mat-card{
+    .mat-card-title{
+        color:black;
+    }
+    .mat-card-content{
+        color: black;
+    }
+}
+

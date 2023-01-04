@@ -1,0 +1,127 @@
+.center {
+    display: block;
+    width: 500px;
+    height: 500px;
+}
+
+.cardHighlight {
+
+    margin-left: 100px;
+    margin-right: 700px;
+    margin-bottom: 10px;
+    background-color: #57f3b7;
+    width: 60%;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-family: "Cooper Black", Times, serif;
+}
+
+p{
+    margin: 1em 0;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 20px;
+    margin-inline-end: 50px;
+    font-family: "Cooper Black", Times, serif;
+}
+
+
+.StandardContent {
+    position: center;
+    display: inline-block;
+    width: 100%;
+    margin-left: 70%;
+    margin: auto;
+}
+
+a.lexicon-term {
+    color: #008000;
+}
+
+a.lexicon-term {
+    text-decoration: none;
+    border-bottom: 1px dotted #080;
+    color: #080;
+    cursor: help;
+}
+
+ul {
+    padding: 0 0 0 40px;
+    margin-inline-start: 20px;
+    margin-inline-end: 50px;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 20px;
+    margin-inline-end: 50px;
+    padding-inline-start: 40px;
+}
+
+article {
+    display: block;
+}
+
+
+.row1:after {
+    position: center;
+}
+
+.content {
+    max-width: 1100px;
+    margin: auto;
+  }
+
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 400px; 
+}
+
+.container img{
+    position: center;
+    width: 1520px;
+    height: 500px;
+}
+
+.container .btn{
+    position: absolute;
+    top:50%;
+    left:70%;
+    transform: translate(-50%, -50%);
+
+    color: black;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.btnScrollToTop{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #e62739;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btnScrollToTop:active{
+   background: #cc2333;
+}
